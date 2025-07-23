@@ -43,19 +43,7 @@ bool batteryCRIsOk (float chargeRate)
 
 bool batteryIsOk(float temp, float sc, float cRate) 
 {
-  bool a = batteryTempIsOk(temp);
-  bool b = batterySocIsOk(sc);
-  bool c = batteryCRIsOk (cRate);
-  
-  if ( a && b && c )
-  {
-    cout << "All looks Good!!\n";
-    return true;
-  }
-  else
-  {
-    return false; 
-  }
+return isTemperatureOk(temp) && isSocOk(sc) && isChargeRateOk(cRate);
 }
 
 int main() {
