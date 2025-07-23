@@ -52,6 +52,10 @@ bool batteryIsOk(float temp, float sc, float cRate)
     cout << "All looks Good!!\n";
     return true;
   }
+  else
+  {
+    return false; 
+  }
 }
 
 int main() {
