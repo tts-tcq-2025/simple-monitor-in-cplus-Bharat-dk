@@ -47,7 +47,7 @@ bool batteryIsOk(float temp, float sc, float cRate)
   bool b = batterySocIsOk(sc);
   bool c = batteryCRIsOk (cRate);
   
-  if ( a && b && c == true)
+  if ( a && b && c )
   {
     cout << "All looks Good!!\n";
     return true;
