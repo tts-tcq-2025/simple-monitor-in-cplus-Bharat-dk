@@ -2,27 +2,29 @@
 #include <iostream>
 using namespace std;
 
-bool batteryTempIsOk (float temperature)
+bool batteryTempIsOk(float temperature)
 {
-  return (temperature < 0 || temperature > 45);
+  return temperature >= 0 && temperature <= 45;
 }
 
-bool batterySocIsOk (float soc)
+bool batterySocIsOk(float soc)
 {
-  return (soc < 20 || soc > 80);
+  return soc >= 20 && soc <= 80;
 }
-  
-bool batteryCRIsOk (float chargeRate)
+
+bool batteryCRIsOk(float chargeRate)
 {
-return chargeRate > 0.8;
+  return chargeRate <= 0.8;
 }
 
 bool batteryIsOk(float temp, float sc, float cRate) 
 {
-return batteryTempIsOk(temp) && batterySocIsOk(sc) && batteryCRIsOk(cRate);
+    bool a = batteryTempIsOk(temp) && batterySocIsOk(sc) && batteryCRIsOk(cRate);
+  return a;
 }
 
 int main() {
   assert(batteryIsOk(40, 40, 0.2) == true);
-  assert(batteryIsOk(50, 85, 0) == false) ;
+  assert(batteryIsOk(50, 85, 0) == false);
+  
 }
